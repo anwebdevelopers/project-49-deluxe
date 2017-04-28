@@ -1,0 +1,121 @@
+.page {
+    padding: 0 0 4rem 0;
+}
+.catalog {
+    display: flex;
+    margin: 3rem 0 0 0;
+    border: 1px solid #ceccc8;
+}
+.catalog__img {
+    margin: 0;
+    flex: 0 1 auto;
+    width: 50%;
+    min-height: 50rem;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+.catalog__name {
+    margin: auto 3rem 3rem 3rem;
+    padding: 1rem 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #000;
+    background-clip: padding-box;
+    border: 1rem solid transparentize($grad-start, .3);
+	border-image: linear-gradient(to top right, transparentize($grad-start, .3), transparentize($grad-end, .3));
+	border-image-slice: 1;
+}
+.catalog__list {
+    padding: 3rem 2rem 0 2rem;
+    list-style: none;
+    flex: 0 1 auto;
+    width: 49%;
+    margin: 0 0 0 1%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.catalog__list-item {
+    flex: 0 1 auto;
+    display: block;
+    width: 23%;
+    margin: 0 1% 3rem 1%;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    transition: all .5s ease;
+    &:active,
+    &:focus,
+    &:hover {
+        color: $hover;
+        .catalog__list-img {
+            img {
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+.catalog__list-img {
+    margin: 0;
+    img {
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        transition: all .5s ease;
+    }
+}
+.catalog__list-name {
+    margin: 1rem 0 0 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+@media only screen and (max-width : 1200px) {
+
+}
+
+@media only screen and (max-width : 992px) {
+    .catalog {
+        flex-direction: column;
+    }
+    .catalog__img {
+        width: auto;
+    }
+    .catalog__list {
+        width: auto;
+        margin: 0;
+        padding: 3rem 1rem 0 1rem;
+    }
+    .catalog__list-item {
+        width: 18%;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+
+}
+
+@media only screen and (max-width : 640px) {
+    .catalog__list-item {
+        width: 23%;
+    }
+}
+
+@media only screen and (max-width : 480px) {
+    .catalog__list-item {
+        width: 31%;
+    }
+}
+
+@media only screen and (max-width : 360px) {
+    .catalog__list-item {
+        width: 48%;
+    }
+}

@@ -1,0 +1,89 @@
+.page-nav {
+    background-color: $dark;
+}
+.page-nav__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.4rem;
+    line-height: 1.25;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    > li {
+        position: relative;
+        flex: 1 1 auto;
+        transition: all .5s ease;
+        &.page-nav__dropdown {
+            >a {
+                &:after {
+                    content: '';
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: .5rem;
+                    height: .5rem;
+                    margin: -.3rem 0 0 1rem;
+                    border-top: 1px solid #fff;
+                    border-right: 1px solid #fff;
+                    transform: rotate(135deg);
+                    transition: all .3s ease;
+                }
+            }
+        }
+        &:focus,
+        &:active,
+        &:hover,
+        &.active {
+            background-color: lighten($dark, 15%);
+            &.page-nav__dropdown {
+                >a {
+                    &:after {
+                        margin: .3rem 0 0 1rem;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+            > ul {
+                max-height: 500px;
+                padding: 1rem;
+            }
+        }
+
+        > ul {
+            margin: 0;
+            padding: 0 1rem;
+            list-style: none;
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            min-width: 100%;
+            max-height: 0;
+            overflow: hidden;
+            background-color: transparentize(lighten($dark, 15%), .2);
+            transition: all .5s ease;
+            >li {
+                > a {
+                    padding: 1rem 1rem;
+                    &:focus,
+                    &:active,
+                    &:hover {
+                        color: $hover;
+                    }
+                }
+            }
+        }
+        > a {
+            padding: 1.6rem 1rem;
+            text-align: center;
+        }
+        a {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.5s ease;
+        }
+    }
+}

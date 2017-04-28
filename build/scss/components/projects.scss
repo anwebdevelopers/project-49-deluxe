@@ -1,0 +1,231 @@
+.projects {
+    position: relative;
+    padding: 7rem 0;
+    background-color: lighten($dark, 20%);
+    background-image: url(../img/bg-projects.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    &:before {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: transparentize(#000, .3);
+    }
+}
+@media only screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+      .projects {
+          background-attachment: scroll;
+      }
+}
+.projects__container {
+    position: relative;
+    z-index: 1;
+}
+.projects__title {
+    color: #fff;
+}
+.projects__slider {
+    margin: 5rem 0 0 0;
+    &.owl-carousel {
+        padding: 0 10rem;
+        .owl-stage-outer {
+            .owl-stage {
+                display: flex;
+                .owl-item {
+                    flex: 1 0 auto;
+                    display: flex;
+                    .projects__item {
+                        flex: 1 0 auto;
+                        margin-top: 0;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .owl-nav {
+            position: absolute;
+            top: 40%;
+            left: 0;
+            right: 0;
+            .owl-prev,
+            .owl-next {
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                width: 6.5rem;
+                height: 6.5rem;
+                border-radius: 50%;
+                background-color: transparentize(#fff, .8);
+                transition: all .5s ease;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    z-index: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    border-radius: 50%;
+                    background-image: linear-gradient(to top right, transparentize($grad-start, .5), transparentize($grad-end, .5));
+                    opacity: 0;
+                    transition: all .5s ease;
+                }
+                &:after {
+                    position: absolute;
+                    z-index: 1;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 2.2rem;
+                    color: #fff;
+                     font-family: "fontello";
+                     font-style: normal;
+                     font-weight: normal;
+                     speak: none;
+                     text-decoration: inherit;
+                     font-variant: normal;
+                     text-transform: none;
+                     -webkit-font-smoothing: antialiased;
+                     -moz-osx-font-smoothing: grayscale;
+                }
+                &:active,
+                &:hover {
+                    background-color: transparentize(#000, 1);
+                    &:before {
+                        opacity: 1;
+                    }
+                }
+            }
+            .owl-prev {
+                left: 15px;
+                &:after {
+                    content: '\e802';
+                }
+            }
+            .owl-next {
+                right: 15px;
+                &:after {
+                    content: '\e803';
+                }
+            }
+        }
+        .owl-dots {
+            margin: 3rem 0 0 0;
+            text-align: center;
+            .owl-dot {
+                display: inline-block;
+                vertical-align: top;
+                width: 1rem;
+                height: 1rem;
+                margin: 0 .5rem;
+                border-radius: 50%;
+                border: .3rem solid lighten($dark, 30%);
+                background-color: lighten($dark, 30%);
+                transition: all .5s ease;
+                &.active {
+                    background-color: $dark;
+                    border-color: #fff;
+                }
+            }
+        }
+    }
+}
+.projects__item {
+    display: flex;
+    margin: 5rem 0 0 0;
+}
+.projects__img {
+    margin: 0;
+    flex: 0 1 auto;
+    width: 60%;
+    min-height: 37rem;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+.projects__content {
+    flex: 0 1 auto;
+    align-self: center;
+    width: 36%;
+    margin: 0 0 0 4%;
+    padding: 4rem 0;
+}
+.projects__name {
+    margin: 0;
+    font-size: 2.2rem;
+    line-height: 1.25;
+    font-weight: 600;
+    color: #fff;
+}
+.projects__text {
+    margin: 2rem 0 0 0;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #fff;
+    font-family: 'Roboto Condensed';
+}
+
+
+@media only screen and (max-width : 1200px) {
+
+}
+
+@media only screen and (max-width : 992px) {
+    .projects__item {
+        display: block;
+    }
+    .projects__img {
+        width: auto;
+    }
+    .projects__content {
+        width: auto;
+        margin: 4rem 0 0 0;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+
+}
+
+@media only screen and (max-width : 640px) {
+    .projects__slider {
+        &.owl-carousel {
+            padding: 0;
+            .owl-nav {
+                position: static;
+                margin: 3rem 0 0 0;
+                text-align: center;
+                .owl-prev,
+                .owl-next {
+                    position: relative;
+                    display: inline-block;
+                    vertical-align: top;
+                    left: auto;
+                    right: auto;
+                    margin: 0 3rem;
+                }
+            }
+            .owl-dots {
+                display: none;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : 480px) {
+
+}
+
+@media only screen and (max-width : 360px) {
+
+}

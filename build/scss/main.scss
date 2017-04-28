@@ -1,0 +1,143 @@
+@import "bourbon";
+@import "components/vars.scss";
+@import "components/normalize.scss";
+@import "components/fonts.scss";
+@import "html/libs/fontello-7332d90d/css/fontello";
+
+*:focus::-webkit-input-placeholder {color: transparent}
+*:focus::-moz-placeholder          {color: transparent}
+*:focus:-moz-placeholder           {color: transparent}
+*:focus:-ms-input-placeholder      {color: transparent}
+
+*::-webkit-input-placeholder {
+	color: #fff;
+	opacity: 1;
+}
+*:-moz-placeholder {
+	color: #fff;
+	opacity: 1;
+}
+*::-moz-placeholder {
+	color: #fff;
+	opacity: 1;
+}
+
+*:-ms-input-placeholder {
+	color: #fff;
+	opacity: 1;
+}
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+	color: #fff;
+}
+body input:required:valid,
+body textarea:required:valid {
+	color: #fff;
+}
+*,
+*:before,
+*:after{
+	box-sizing: border-box;
+}
+
+html {
+	height: 100% !important;
+	font-size: 10px;
+}
+body {
+	position: relative;
+	min-width: 320px;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	line-height: 1.25;
+	font-weight: 400;
+	font-family: 'Roboto', sans-serif;
+	color: #000;
+	background-color: #fff;
+	overflow-x: hidden;
+}
+.container {
+	max-width: 1170px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.hidden {
+	display: none;
+}
+a {
+	outline: none !important;
+}
+.button {
+	@include btn;
+	position: relative;
+    padding: 1.5rem 3rem;
+    font-size: 1.6rem;
+    color: #fff;
+    font-weight: 400;
+	letter-spacing: 1px;
+	font-family: 'Roboto Condensed';
+    border: 2px solid #fff;
+	// border-image: linear-gradient(to top right, $grad-start, $grad-end);
+	// border-image-slice: 1;
+	transition: all .5s ease;
+	&:after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-image: linear-gradient(to top right, transparentize($grad-start, .2), transparentize($grad-end, .2));
+		opacity: 0;
+		transition: .5s ease;
+	}
+	&:active,
+    &:focus,
+    &:hover {
+		border-color: $hover;
+		&:after {
+			opacity: .7;
+		}
+    }
+}
+.title {
+	margin: 0;
+	font-size: 3.2rem;
+    font-weight: 600;
+    line-height: 1.25;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+//Custom Styles Here
+@import "components/header.scss";
+@import "components/production.scss";
+@import "components/projects.scss";
+@import "components/footer.scss";
+@import "components/page-nav.scss";
+@import "components/catalog.scss";
+@import "components/collection.scss";
+@import "components/product.scss";
+@import "components/tabs.scss";
+
+
+//@import "build/scss/components/magnific-popup.scss";
+
+//ALWAYS END
+//@import "components/media.scss";
+
+//Load Libs SASS
+//@import "html/libs/animate/animate.sass";
+@import "html/libs/OwlCarousel2-2.2.1/dist/assets/owl.carousel.min";
+//@import "html/libs/superfish/dist/css/superfish";
+//@import "html/libs/font-awesome/scss/font-awesome.scss";
+//@import "html/libs/jQuery.mmenu/dist/css/jquery.mmenu.all";
+//@import "html/libs/magnific-popup/dist/magnific-popup";
